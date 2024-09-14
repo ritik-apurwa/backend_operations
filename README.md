@@ -634,7 +634,7 @@ export default CustomCheckBox;
 npm i @xixixao/uploadstuff
 ```
 
-```
+``` typescirpt 
 import { api } from "@convex/_generated/api";
 import { Id } from "@convex/_generated/dataModel";
 import { zodResolver } from "@hookform/resolvers/zod";
