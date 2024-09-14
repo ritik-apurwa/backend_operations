@@ -234,7 +234,15 @@ export const useTheme = () => {
 }
 ```
 
-### wrap your app with this theme provider
+#### add these also
+
+```
+npm install  react-router-dom
+npm install react-icons
+npm install framer-motion
+```
+
+#### wrap your app with this theme provider
 
 ```
  <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
@@ -634,7 +642,7 @@ export default CustomCheckBox;
 npm i @xixixao/uploadstuff
 ```
 
-``` typescirpt 
+```typescirpt
 import { api } from "@convex/_generated/api";
 import { Id } from "@convex/_generated/dataModel";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -854,4 +862,11 @@ export const useFormControlHook = ({
 };
 ```
 
-####  
+####  add this vercel.json for particular router pages 
+```
+{
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+}
+```
+
+
