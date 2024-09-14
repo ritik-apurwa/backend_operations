@@ -1,4 +1,12 @@
-# React + TypeScript + Vite
+# Backend Operation 
+
+###  "build": "tsc -b && vite build", this commant changed into this => vite build
+### created a file vercel.json and paste this code 
+``` json 
+{
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+}
+ ```
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
