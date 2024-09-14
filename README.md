@@ -13,30 +13,33 @@ npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 
 ```
+
 #### configure tailwind.config.js to ts and add the following content
- 
- ``` 
+
+```
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
+ content: [
+   "./index.html",
+   "./src/**/*.{js,ts,jsx,tsx}",
+ ],
+ theme: {
+   extend: {},
+ },
+ plugins: [],
 }
-``` 
+```
 
-#### in your main css file add this @tailwind directives 
+#### in your main css file add this @tailwind directives
 
-``` 
+```
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-``` 
-#### add this into your  tsconfig.json 
+```
+
+#### add this into your tsconfig.json
+
 ```
 {
   "files": [],
@@ -61,8 +64,10 @@ export default {
   }
 }
 ```
-#### add this into your  tsconfig.app.json 
-``` 
+
+#### add this into your tsconfig.app.json
+
+```
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
@@ -88,17 +93,17 @@ export default {
   "include": ["src", "convex"]
   // add these later "convex", "features", "providers", "hooks", "workspace", "src/_hooks/use-toast.ts", "all-files/navbar", "all-files/blog-page.tsx", "all-files/newBlogsPage.tsx"
 }
-``` 
+```
 
 #### for resolve path error install this (so you can import "path" without error)
 
 ```
 npm i -D @types/node
-``` 
+```
 
+#### add this into your vite.config.ts
 
-#### add this into your vite.config.ts 
-``` 
+```
 import path from "path"
 import react from "@vitejs/plugin-react-swc"
 import { defineConfig } from "vite"
@@ -109,12 +114,55 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
-      "@convex": path.resolve(__dirname, "./convex"), 
-      // "@providers":path.resolve(__dirname, "./src/_providers"), 
+      "@convex": path.resolve(__dirname, "./convex"),
+      // "@providers":path.resolve(__dirname, "./src/_providers"),
       // "@features":path.resolve(__dirname, "./src/_features"),
       // "@hooks":path.resolve(__dirname, "./src/_features"),
       // "workspace":path.resolve(__dirname, "./src/_workspace")
     },
   },
 })
+```
+
+#### now install shadcn and install shadcn
+
+```
+npx shadcn@latest init
+```
+
+#### add this components from shadcn into your src/components/ui/
+
+```
+npx shadcn@latest add dropdown-menu
+npx shadcn@latest add alert
+npx shadcn@latest add alert-dialog
+npx shadcn@latest add avatar
+npx shadcn@latest add badge
+npx shadcn@latest add button
+npx shadcn@latest add card
+npx shadcn@latest add carousel
+npx shadcn@latest add checkbox
+npx shadcn@latest add command
+npx shadcn@latest add dialog
+npx shadcn@latest add dropdown-menu
+npx shadcn@latest add form
+npx shadcn@latest add input
+npx shadcn@latest add progress
+npx shadcn@latest add select
+npx shadcn@latest add skeleton
+npx shadcn@latest add tabs
+npx shadcn@latest add textarea
+npx shadcn@latest add toast
+```
+#### you can also add convex 
+```
+npm i convex 
 ``` 
+
+#### run this command to start the project
+```
+npx convex dev
+``` 
+
+
+#### you can add this custom input 
